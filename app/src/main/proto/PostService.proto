@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package me.codinglamer.grpcjavaserver;
+
+message PostRequest {
+
+}
+
+message PostResponse {
+  int64 id = 1;
+  string title = 2;
+  string description = 3;
+}
+
+service PostService {
+  rpc getPosts(PostRequest) returns (stream PostResponse);
+}
